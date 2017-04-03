@@ -25,9 +25,9 @@ public class SumsOfInts {
         long k = 1; // min sequence size, k != 0
         List<Long> seqs = new ArrayList();
         
-        double limit = (Math.sqrt(8 * n + 1) - 1) / 2; // for a = 1
+        double limit = (Math.sqrt(8 * n + 1) - 1) / 2; // for a = 1 [k = (sqrt(4a^2 - 4a + 8n +1) - 2a + 1) /2 ]
         while (k <= limit){ 
-            // find begining of a sequence a for k
+            // find begining of a sequence - a for k
             // a = (2*n/k - k + 1)/2
             // n = a + (a+1) + (a+2) + ... + (a + (k-1))
             // n = sum (a + i), where i -> (0, k-1)
@@ -45,6 +45,7 @@ public class SumsOfInts {
             k++;
         }
         
+        // print out the result
         Collections.sort(seqs);
         
         System.out.println(String.format("Found %d sequences:", seqs.size()));
@@ -66,7 +67,7 @@ public class SumsOfInts {
         // result should be a whole number
         if ((2*n/k - k + 1) % 2 == 0)
             return (2*n/k - k + 1)/2;
-        else // otherwise return -1
-            return -1;
+        // otherwise return -1
+        return -1;
     }                
 }
