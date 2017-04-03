@@ -1,5 +1,5 @@
 /*
- * Program to find sums of non-negative consequtive integers
+ * Program for finidng sums of non-negative consequtive integers
  */
 package sumsofints;
 
@@ -58,8 +58,8 @@ public class SumsOfInts {
                 start++;
             }
             return sum;
-        }).forEachOrdered((_item) -> {
-            System.out.println("="+_item);
+        }).forEachOrdered((Long sum) -> {
+            System.out.println("="+sum);
         });        
     }
     
